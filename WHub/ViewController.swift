@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var weiInputView : UITextField?     //输入框
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        weiInputView = UITextField(frame: CGRect(x: 50, y: 200, width: 100, height: 30));
+        weiInputView?.backgroundColor = UIColor.red
+        self.view.addSubview(weiInputView!)
     }
 
     override func didReceiveMemoryWarning() {
