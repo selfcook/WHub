@@ -11,9 +11,9 @@ import SnapKit
 import AAInfographics
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
-    var weiShowLabel : UILabel?
+    var weiShowLabel : UITextField?
     private var aaChartView : AAChartView?
     private var aaChartModel : AAChartModel?
     
@@ -34,16 +34,19 @@ class ViewController: UIViewController {
     //MARK:create views
     func configView() {
         
-        weiShowLabel = UILabel();
+        weiShowLabel = UITextField();
         weiShowLabel?.backgroundColor = UIColor.gray
         weiShowLabel?.textAlignment = NSTextAlignment.center
         weiShowLabel?.font = UIFont.systemFont(ofSize: 18)
+        weiShowLabel?.delegate = self
         self.view.addSubview(weiShowLabel!)
         weiShowLabel?.snp.makeConstraints({ (make) in
             make.top.equalTo(100)
             make.left.right.equalToSuperview()
             make.height.equalTo(200)
         })
+        
+        
         
         let chartViewWidth  = self.view.frame.size.width
         let chartViewHeight = self.view.frame.size.height/2
@@ -91,6 +94,9 @@ class ViewController: UIViewController {
         
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
 }
 

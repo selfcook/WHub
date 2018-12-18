@@ -13,6 +13,7 @@
 		4DF7C70821C7E80E00431FDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70621C7E80E00431FDB /* Main.storyboard */; };
 		4DF7C70A21C7E80F00431FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70921C7E80F00431FDB /* Assets.xcassets */; };
 		4DF7C70D21C7E80F00431FDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */; };
+		4EF2154A21C8CE4B004E2F90 /* WeiTable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2154821C8CE4B004E2F90 /* WeiTable.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		4DF7C70921C7E80F00431FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DF7C70C21C7E80F00431FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DF7C70E21C7E80F00431FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF2154921C8CE4B004E2F90 /* WeiTable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeiTable.xcdatamodel; sourceTree = "<group>"; };
 		56327700A11B07493AF0AED8 /* Pods_WHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB0FDCCFE3272EE7F0C753B /* Pods-WHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WHub/Pods-WHub.debug.xcconfig"; sourceTree = "<group>"; };
 		CDE5CDACAA9509507CF73169 /* Pods-WHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-WHub/Pods-WHub.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				4DF7C70921C7E80F00431FDB /* Assets.xcassets */,
 				4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */,
 				4DF7C70E21C7E80F00431FDB /* Info.plist */,
+				4EF2154821C8CE4B004E2F90 /* WeiTable.xcdatamodeld */,
 			);
 			path = WHub;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF7C70521C7E80E00431FDB /* ViewController.swift in Sources */,
+				4EF2154A21C8CE4B004E2F90 /* WeiTable.xcdatamodeld in Sources */,
 				4DF7C70321C7E80E00431FDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +407,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4EF2154821C8CE4B004E2F90 /* WeiTable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4EF2154921C8CE4B004E2F90 /* WeiTable.xcdatamodel */,
+			);
+			currentVersion = 4EF2154921C8CE4B004E2F90 /* WeiTable.xcdatamodel */;
+			path = WeiTable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4DF7C6F721C7E80E00431FDB /* Project object */;
 }
