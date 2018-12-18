@@ -7,23 +7,43 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
-    var weiInputView : UITextField?     //输入框
+    var weiShowLabel : UILabel?
     
+    //MARK:VC circle
     override func viewDidLoad() {
         super.viewDidLoad()
-        weiInputView = UITextField(frame: CGRect(x: 50, y: 200, width: 100, height: 30));
-        weiInputView?.backgroundColor = UIColor.red
-        self.view.addSubview(weiInputView!)
+        
+        configView()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:create views
+    func configView() {
+        
+        weiShowLabel = UILabel();
+        weiShowLabel?.backgroundColor = UIColor.gray
+        weiShowLabel?.textAlignment = NSTextAlignment.center
+        weiShowLabel?.font = UIFont.systemFont(ofSize: 18)
+        self.view.addSubview(weiShowLabel!)
+        weiShowLabel?.snp.makeConstraints({ (make) in
+            make.top.equalTo(100)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(200)
+        })
+        
+        
 
-
+    }
+    
+    
 }
 
