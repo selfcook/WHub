@@ -5,4 +5,5 @@ use_frameworks!
 target 'WHub' do
     pod 'SnapKit', '~> 4.0'
     pod 'AAInfographics', '2.0.4'
+    pod 'MJRefresh'
 end

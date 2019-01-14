@@ -1,2 +1,2 @@
 # WHub
-Record your weight
+Exercise
