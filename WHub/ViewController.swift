@@ -15,7 +15,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     private var collectionView : UICollectionView?
-
+    // 顶部刷新
+    let header = MJRefreshNormalHeader()
+    
     //MARK:VC circle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView?.dataSource = self
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(nib, forCellWithReuseIdentifier: "reuseNum")
-        collectionView?.mj_header = MJRefreshHeader(refreshingBlock: {
-            
-        })
+        header.setRefreshingTarget(self, refreshingAction: #selector(ViewController.headerRefresh))
+        collectionView?.mj_header = header
+        
         self.view .addSubview(collectionView!)
         layout.itemSize = CGSize(width: 70, height: 70);
         layout.headerReferenceSize = CGSize(width: 375, height: 30)
@@ -75,5 +77,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //
 //        return reuseView!
 //    }
-    
+    @objc func headerRefresh() {
+        header.endRefreshing()
+    }
 }
