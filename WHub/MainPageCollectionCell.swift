@@ -15,7 +15,8 @@ class MainPageCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textLabel.textColor = UIColor.black
+        textLabel.font = UIFont.systemFont(ofSize: 15)
     }
 
 }

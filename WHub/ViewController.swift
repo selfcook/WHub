@@ -30,12 +30,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     //MARK:create views
     func configView() {
-        
-        collectionView = UICollectionView.init()
+        let nib = UINib(nibName: "MainPageCollectionCell", bundle: nil)
+        let layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: 375, height: 600), collectionViewLayout: layout)
+        collectionView?.backgroundColor = UIColor.clear
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        
+        collectionView?.register(nib, forCellWithReuseIdentifier: "reuseNum")
         self.view .addSubview(collectionView!)
+        layout.itemSize = CGSize(width: 70, height: 70);
     }
     
     
@@ -44,11 +47,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellId = "cellid"
-        let cell : MainPageCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MainPageCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseNum", for: indexPath) as! MainPageCollectionCell
         
-        cell.imageView.image = UIImage.init(named: "test")
-        cell.textLabel.text = String.init(format: "%@", indexPath.section)
+        cell.imageView!.image = UIImage(named: "test")
+        cell.textLabel!.text = String(format: "%d", indexPath.section)
         
         return cell
     }
