@@ -23,7 +23,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         configView()
+        let home = NSHomeDirectory()
+        let fm = FileManager.default
+        let docArr = try? fm.contentsOfDirectory(atPath: home)
+        let subList = fm.subpaths(atPath: home + "/Documents")
         
+        print(subList as Any)
+        print(home)
+        print("file: \(docArr!)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         header.setRefreshingTarget(self, refreshingAction: #selector(ViewController.headerRefresh))
         collectionView?.mj_header = header
         
-        self.view .addSubview(collectionView!)
+        self.view.addSubview(collectionView!)
         layout.itemSize = CGSize(width: 70, height: 70);
         layout.headerReferenceSize = CGSize(width: 375, height: 30)
     }
@@ -64,6 +71,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
+    
+    
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //
 //        var reuseView : UICollectionReusableView?
@@ -80,4 +89,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @objc func headerRefresh() {
         header.endRefreshing()
     }
+    
+    
+    
 }
