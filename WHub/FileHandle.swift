@@ -8,19 +8,106 @@
 
 import Foundation
 
+internal func printFM(_ str: String) {
+    print("FileHandle: \(str)")
+}
+
+
+public class FileModel: NSObject {
+    
+    public var fileName : String?
+    
+    public var fileSize : String?
+    
+    
+    
+    
+}
+
+
 class FileHandle: NSObject {
     
     //单例
     static let `default` = FileHandle()
     
+    //沙盒路径
+    let path = NSHomeDirectory() + "/Documents"
+    let fm = FileManager.default
     
-    func getFileArr() -> Array<Any> {
-        let home = NSHomeDirectory()
-        let fm = FileManager.default
-        let docArr = try? fm.contentsOfDirectory(atPath: home + "/Documents")
+    //本地文件数据模型集合
+//    var fileModelArr = [FileModel]() {
+//        didSet{
+//            print("文件数组发生变化了")
+//        }
+//    }
+    
+    
+    func getFileArr() -> Array<FileModel>? {
         
-        print("file: \(docArr!)")
-        return docArr!
+        var docArr = try? fm.contentsOfDirectory(atPath: path)
+        docArr = docArr?.filter{$0 != ".DS_Store"}
+        
+        var fileModelArr : [FileModel] = []
+        let subPathArr = getSubPathArr(path: path)
+        
+        
+        for item in docArr! {
+            let model = FileModel()
+            
+            model.fileName = item
+            model.fileSize = getFileSize(name: item)
+            fileModelArr.append(model)
+            
+        }
+        
+        
+        print(subPathArr as Any)
+        printFM(path)
+        printFM("filenamelist: \(fileModelArr)")
+        
+        return fileModelArr
+    }
+    
+    
+    func getSubPathArr(path:String) -> [String]? {
+        let arr = try? fm.subpathsOfDirectory(atPath: path)
+        
+        return arr
+    }
+    
+    
+    func getFileSize(name:String) -> String? {
+        let filePath = path + "/" + name
+        var size: Any?
+        do {
+            size = try fm.attributesOfItem(atPath: filePath)[FileAttributeKey.size]
+        } catch (let error) {
+            printFM("File size error: \(error)")
+            return nil
+        }
+        
+        guard let fileSize = size as? UInt64 else {
+            return nil
+        }
+        
+        // bytes
+        if fileSize < 1023 {
+            return String(format: "%lu bytes", CUnsignedLong(fileSize))
+        }
+        // KB
+        var floatSize = Float(fileSize / 1024)
+        if floatSize < 1023 {
+            return String(format: "%.1f KB", floatSize)
+        }
+        // MB
+        floatSize = floatSize / 1024
+        if floatSize < 1023 {
+            return String(format: "%.1f MB", floatSize)
+        }
+        // GB
+        floatSize = floatSize / 1024
+        return String(format: "%.1f GB", floatSize)
+        
     }
 
     

@@ -18,19 +18,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // 顶部刷新
     let header = MJRefreshNormalHeader()
     
+    private var fileNameArr : Array<FileModel>?
+    
+    
+    
     //MARK:VC circle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configView()
-        let home = NSHomeDirectory()
-        let fm = FileManager.default
-        let docArr = try? fm.contentsOfDirectory(atPath: home)
-        let subList = fm.subpaths(atPath: home + "/Documents")
         
-        print(subList as Any)
-        print(home)
-        print("file: \(docArr!)")
+        let fh = FileHandle.default
+        fileNameArr = fh.getFileArr()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,21 +52,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView?.mj_header = header
         
         self.view.addSubview(collectionView!)
-        layout.itemSize = CGSize(width: 70, height: 70);
-        layout.headerReferenceSize = CGSize(width: 375, height: 30)
+        layout.itemSize = CGSize(width: 70, height: 85);
+        layout.headerReferenceSize = CGSize(width: 375, height: 10)
     }
     
     
     //MARK:collectionViewDelegate&datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return (fileNameArr?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseNum", for: indexPath) as! MainPageCollectionCell
         
+        let model = fileNameArr?[indexPath.row]
+        
         cell.imageView!.image = UIImage(named: "test")
-        cell.textLabel!.text = String(format: "%d", indexPath.row)
+        cell.textLabel!.text = model?.fileName
+        cell.sizeLabel!.text = model?.fileSize
         
         return cell
     }
