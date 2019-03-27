@@ -110,5 +110,16 @@ class FileHandle: NSObject {
         
     }
 
+    // 判断是否是文件夹的方法
     
+    static func directoryIsExists (path: String) -> Bool {
+        
+        var directoryExists = ObjCBool.init(false)
+        
+        let fileExists = FileManager.default.fileExists(atPath: path, isDirectory: &directoryExists)
+        
+        
+        return fileExists && directoryExists.boolValue
+        
+    }
 }
