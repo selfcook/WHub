@@ -13,14 +13,18 @@ internal func printFM(_ str: String) {
 }
 
 
+public enum FileTpye {
+    case dir, moive, others
+}
+
+
 public class FileModel: NSObject {
     
     public var fileName : String?
     
     public var fileSize : String?
     
-    
-    
+    public var fileType : FileTpye?
     
 }
 
@@ -53,9 +57,12 @@ class FileHandle: NSObject {
         
         for item in docArr! {
             let model = FileModel()
+            let isDir = directoryIsExists(path: path + "/" + item)
             
+            model.fileType = isDir ? FileTpye.dir : FileTpye.others
             model.fileName = item
             model.fileSize = getFileSize(name: item)
+            
             fileModelArr.append(model)
             
         }
@@ -112,7 +119,7 @@ class FileHandle: NSObject {
 
     // 判断是否是文件夹的方法
     
-    static func directoryIsExists (path: String) -> Bool {
+    func directoryIsExists (path: String) -> Bool {
         
         var directoryExists = ObjCBool.init(false)
         

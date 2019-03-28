@@ -67,7 +67,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let model = fileNameArr?[indexPath.row]
         
-        cell.imageView!.image = UIImage(named: "test")
+        let fileTypeImgName = (model?.fileType == .dir) ? "folder" : "unknown"
+        cell.imageView!.image = UIImage(named: fileTypeImgName)
         cell.textLabel!.text = model?.fileName
         cell.sizeLabel!.text = model?.fileSize
         
