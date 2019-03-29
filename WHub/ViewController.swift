@@ -20,6 +20,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     private var fileNameArr : Array<FileModel>?
     
+    let fh = FileHandle.default
+    
+    
+    
+    
+    
     
     
     //MARK:VC circle
@@ -28,7 +34,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         configView()
         
-        let fh = FileHandle.default
         fileNameArr = fh.getFileArr()
         
     }
@@ -70,7 +75,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let fileTypeImgName = (model?.fileType == .dir) ? "folder" : "unknown"
         cell.imageView!.image = UIImage(named: fileTypeImgName)
         cell.textLabel!.text = model?.fileName
-        cell.sizeLabel!.text = model?.fileSize
+        cell.sizeLabel!.text = (model?.fileType == .dir) ? "" : model?.fileSize
         
         return cell
     }
@@ -91,6 +96,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        return reuseView!
 //    }
     @objc func headerRefresh() {
+        
+        fileNameArr = fh.getFileArr()
+        collectionView?.reloadData()
+        
         header.endRefreshing()
     }
     
