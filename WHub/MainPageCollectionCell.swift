@@ -19,4 +19,5 @@ class MainPageCollectionCell: UICollectionViewCell {
         textLabel.font = UIFont.systemFont(ofSize: 15)
     }
 
+    
 }
