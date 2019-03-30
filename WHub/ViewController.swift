@@ -18,11 +18,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // 顶部刷新
     let header = MJRefreshNormalHeader()
     
+    private var fileNameArr : Array<FileModel>?
+    
+    let fh = FileHandle.default
+    
+    
+    
+    
+    
+    
+    
     //MARK:VC circle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configView()
+        
+        fileNameArr = fh.getFileArr()
         
     }
 
@@ -44,25 +56,31 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         header.setRefreshingTarget(self, refreshingAction: #selector(ViewController.headerRefresh))
         collectionView?.mj_header = header
         
-        self.view .addSubview(collectionView!)
-        layout.itemSize = CGSize(width: 70, height: 70);
-        layout.headerReferenceSize = CGSize(width: 375, height: 30)
+        self.view.addSubview(collectionView!)
+        layout.itemSize = CGSize(width: 70, height: 85);
+        layout.headerReferenceSize = CGSize(width: 375, height: 10)
     }
     
     
     //MARK:collectionViewDelegate&datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return (fileNameArr?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseNum", for: indexPath) as! MainPageCollectionCell
         
-        cell.imageView!.image = UIImage(named: "test")
-        cell.textLabel!.text = String(format: "%d", indexPath.row)
+        let model = fileNameArr?[indexPath.row]
+        
+        let fileTypeImgName = (model?.fileType == .dir) ? "folder" : "unknown"
+        cell.imageView!.image = UIImage(named: fileTypeImgName)
+        cell.textLabel!.text = model?.fileName
+        cell.sizeLabel!.text = (model?.fileType == .dir) ? "" : model?.fileSize
         
         return cell
     }
+    
+    
     
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //
@@ -78,6 +96,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        return reuseView!
 //    }
     @objc func headerRefresh() {
+        
+        fileNameArr = fh.getFileArr()
+        collectionView?.reloadData()
+        
         header.endRefreshing()
     }
+    
+    
+    
 }

@@ -12,11 +12,14 @@ class MainPageCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         textLabel.textColor = UIColor.black
-        textLabel.font = UIFont.systemFont(ofSize: 15)
+        textLabel.font = UIFont.systemFont(ofSize: 12)
+        sizeLabel.textColor = UIColor.black
+        sizeLabel.font = UIFont.systemFont(ofSize: 10)
     }
 
     
