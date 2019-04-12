@@ -49,6 +49,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func configView() {
         let nib = UINib(nibName: "MainPageCollectionCell", bundle: nil)
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(5, 10, 0, 5)
         collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: 375, height: 600), collectionViewLayout: layout)
         collectionView?.backgroundColor = UIColor.clear
         collectionView?.delegate = self
