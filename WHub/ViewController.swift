@@ -32,6 +32,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        title = "本地"
         configView()
         
         fileNameArr = fh.getFileArr()
