@@ -64,6 +64,7 @@ class FileViewController: BaseVC, UICollectionViewDelegate, UICollectionViewData
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(nib, forCellWithReuseIdentifier: "reuseNum")
         header.setRefreshingTarget(self, refreshingAction: #selector(FileViewController.headerRefresh))
+        header.lastUpdatedTimeLabel.isHidden = true
         collectionView?.mj_header = header
         
         self.view.addSubview(collectionView!)
