@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import AAInfographics
-
+import StatusAlert
 
 class FileViewController: BaseVC, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -94,6 +94,10 @@ class FileViewController: BaseVC, UICollectionViewDelegate, UICollectionViewData
         
         navigationItem.titleView = containerView
         
+        
+        //右边导航栏按钮
+        let rightBtnItem = UIBarButtonItem.init(image: UIImage(named: "asd"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(FileViewController.clickRightBarBtn))
+        navigationItem.rightBarButtonItem = rightBtnItem
     }
     
     
@@ -138,6 +142,16 @@ class FileViewController: BaseVC, UICollectionViewDelegate, UICollectionViewData
         header.endRefreshing()
     }
     
-    
+    @objc func clickRightBarBtn() {
+        // Creating StatusAlert instance
+        let statusAlert = StatusAlert()
+        statusAlert.image = UIImage(named: "Some image name")
+        statusAlert.title = "StatusAlert title"
+        statusAlert.message = "Message to show beyond title"
+        statusAlert.canBePickedOrDismissed = true
+        
+        // Presenting created instance
+        statusAlert.showInKeyWindow()
+    }
     
 }
