@@ -1,24 +1,28 @@
 PODS:
   - AAInfographics (2.0.4)
-  - MJRefresh (3.1.15.7)
+  - MJRefresh (3.2.0)
   - SnapKit (4.2.0)
+  - StatusAlert (1.1.1)
 
 DEPENDENCIES:
   - AAInfographics (= 2.0.4)
   - MJRefresh
   - SnapKit (~> 4.0)
+  - StatusAlert (~> 1.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AAInfographics
     - MJRefresh
     - SnapKit
+    - StatusAlert
 
 SPEC CHECKSUMS:
   AAInfographics: 10f87e06fc007a0adbb05de020e4a2fe3119f8de
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
 
-PODFILE CHECKSUM: 9e5c49a2ced93f1844fc3d1599899caaa065cb27
+PODFILE CHECKSUM: 9c3267761089731838c134c27f075620013c07d8
 
 COCOAPODS: 1.5.3

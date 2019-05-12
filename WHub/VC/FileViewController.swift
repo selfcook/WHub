@@ -9,9 +9,9 @@
 import UIKit
 import SnapKit
 import AAInfographics
+import StatusAlert
 
-
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FileViewController: BaseVC, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     private var collectionView : UICollectionView?
@@ -32,10 +32,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.view.backgroundColor = UIColor.white
         configView()
         
         fileNameArr = fh.getFileArr()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,18 +56,48 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func configView() {
         let nib = UINib(nibName: "MainPageCollectionCell", bundle: nil)
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(5, 10, 0, 5)
         collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: 375, height: 600), collectionViewLayout: layout)
         collectionView?.backgroundColor = UIColor.clear
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.alwaysBounceVertical = true
         collectionView?.register(nib, forCellWithReuseIdentifier: "reuseNum")
-        header.setRefreshingTarget(self, refreshingAction: #selector(ViewController.headerRefresh))
+        header.setRefreshingTarget(self, refreshingAction: #selector(FileViewController.headerRefresh))
+        header.lastUpdatedTimeLabel.isHidden = true
         collectionView?.mj_header = header
         
         self.view.addSubview(collectionView!)
         layout.itemSize = CGSize(width: 70, height: 85);
         layout.headerReferenceSize = CGSize(width: 375, height: 10)
+        
+        
+        //导航栏title
+        //首先分别创建渐变层和文本标签，然后将渐变层的mask设置为文本标签即可。
+        let containerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 40))
+        self.view.addSubview(containerView)
+        
+        let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 40))
+        label.text = "本地文件"
+        label.textAlignment = NSTextAlignment(rawValue: 1)!
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        containerView.addSubview(label)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.red.cgColor]
+//        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint.init(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint.init(x: 1, y: 0.5)
+        gradientLayer.frame = label.frame
+        containerView.layer.insertSublayer(gradientLayer, at: 0)
+        gradientLayer.mask = label.layer
+        
+        navigationItem.titleView = containerView
+        
+        
+        //右边导航栏按钮
+        let rightBtnItem = UIBarButtonItem.init(image: UIImage(named: "asd"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(FileViewController.clickRightBarBtn))
+        navigationItem.rightBarButtonItem = rightBtnItem
     }
     
     
@@ -103,6 +142,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         header.endRefreshing()
     }
     
-    
+    @objc func clickRightBarBtn() {
+        // Creating StatusAlert instance
+        let statusAlert = StatusAlert()
+        statusAlert.image = UIImage(named: "Some image name")
+        statusAlert.title = "StatusAlert title"
+        statusAlert.message = "Message to show beyond title"
+        statusAlert.canBePickedOrDismissed = true
+        
+        // Presenting created instance
+        statusAlert.showInKeyWindow()
+    }
     
 }
