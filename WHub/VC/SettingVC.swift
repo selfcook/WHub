@@ -10,4 +10,11 @@ import Foundation
 
 class SettingVC: BaseVC {
     
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "Setting"
+        
+    }
+    
 }

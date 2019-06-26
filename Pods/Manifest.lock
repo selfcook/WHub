@@ -10,13 +10,6 @@ DEPENDENCIES:
   - SnapKit (~> 4.0)
   - StatusAlert (~> 1.1.1)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AAInfographics
-    - MJRefresh
-    - SnapKit
-    - StatusAlert
-
 SPEC CHECKSUMS:
   AAInfographics: 10f87e06fc007a0adbb05de020e4a2fe3119f8de
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
@@ -25,4 +18,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9c3267761089731838c134c27f075620013c07d8
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

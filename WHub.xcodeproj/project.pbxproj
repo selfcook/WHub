@@ -147,6 +147,7 @@
 				4DF7C6FC21C7E80E00431FDB /* Frameworks */,
 				4DF7C6FD21C7E80E00431FDB /* Resources */,
 				DD88A5C6521159146E9EF880 /* [CP] Embed Pods Frameworks */,
+				0ADDC9D328A48992A2AF4284 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +206,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0ADDC9D328A48992A2AF4284 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WHub/Pods-WHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		17C357769478C87E3035F914 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3K7Y65AJM;
+				DEVELOPMENT_TEAM = X89JVHVUUW;
 				INFOPLIST_FILE = WHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,7 +431,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arthur.WHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/wtoe/Desktop/WHub/WHub/Bridging_Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WHub/Bridging_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -427,7 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3K7Y65AJM;
+				DEVELOPMENT_TEAM = X89JVHVUUW;
 				INFOPLIST_FILE = WHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,7 +451,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arthur.WHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/wtoe/Desktop/WHub/WHub/Bridging_Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WHub/Bridging_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
