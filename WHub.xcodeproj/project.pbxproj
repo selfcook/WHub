@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D66A72784C0F153BEAE8FE7 /* Pods_WHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56327700A11B07493AF0AED8 /* Pods_WHub.framework */; };
+		4D41151822CA41F7001A334B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41151722CA41F7001A334B /* Const.swift */; };
+		4D41151A22CA4449001A334B /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41151922CA4449001A334B /* AlarmVC.swift */; };
 		4DF7C70321C7E80E00431FDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7C70221C7E80E00431FDB /* AppDelegate.swift */; };
 		4DF7C70521C7E80E00431FDB /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7C70421C7E80E00431FDB /* FileViewController.swift */; };
 		4DF7C70821C7E80E00431FDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70621C7E80E00431FDB /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D41151722CA41F7001A334B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		4D41151922CA4449001A334B /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		4DF7C6FF21C7E80E00431FDB /* WHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF7C70221C7E80E00431FDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF7C70421C7E80E00431FDB /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */,
 				4DF7C70E21C7E80F00431FDB /* Info.plist */,
 				4E7E898921EC751300798459 /* Bridging_Header.h */,
+				4D41151722CA41F7001A334B /* Const.swift */,
 			);
 			path = WHub;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				4EF9AD742284228300AD96CE /* TransferFileVC.swift */,
 				4EF9AD76228422A800AD96CE /* SettingVC.swift */,
 				4E45659B22CA0C99004B9F55 /* HomeVC.swift */,
+				4D41151922CA4449001A334B /* AlarmVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D41151A22CA4449001A334B /* AlarmVC.swift in Sources */,
 				4DF7C70521C7E80E00431FDB /* FileViewController.swift in Sources */,
 				4EF9AD77228422A800AD96CE /* SettingVC.swift in Sources */,
 				4E7E898721EC5A7400798459 /* MainPageCollectionCell.swift in Sources */,
@@ -282,6 +289,7 @@
 				4EF9AD732284219600AD96CE /* BaseTabbarController.swift in Sources */,
 				4E58CBAA22488823007C31C7 /* FileHandle.swift in Sources */,
 				4EF9AD752284228300AD96CE /* TransferFileVC.swift in Sources */,
+				4D41151822CA41F7001A334B /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +435,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3K7Y65AJM;
+				DEVELOPMENT_TEAM = X89JVHVUUW;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +457,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3K7Y65AJM;
+				DEVELOPMENT_TEAM = X89JVHVUUW;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

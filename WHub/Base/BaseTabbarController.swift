@@ -20,12 +20,12 @@ class BaseTabbarController: UITabBarController {
     }
     
     func addSubController() {
-        let fileVC = FileViewController()
-        let fileNav = UINavigationController(rootViewController:fileVC)
+        let homeVC = HomeVC()
+        let homeNav = UINavigationController(rootViewController:homeVC)
 //        fileNav.tabBarItem.title = "文件"
-        fileNav.tabBarItem.image = UIImage(named:"tabbar_files")
-        fileNav.tabBarItem.selectedImage = UIImage(named:"tarbar1_yes")
-        fileNav.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0)
+        homeNav.tabBarItem.image = UIImage(named:"tabbar_files")
+        homeNav.tabBarItem.selectedImage = UIImage(named:"tarbar1_yes")
+        homeNav.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0)
         
         let transferVC = TransferFileVC()
         let transferNav = UINavigationController(rootViewController:transferVC)
@@ -42,7 +42,7 @@ class BaseTabbarController: UITabBarController {
         settingNav.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0)
         
         // 添加工具栏
-        let items = [fileNav,transferNav,settingNav]
+        let items = [homeNav,transferNav,settingNav]
         self.viewControllers = items
         
         //tabBar 底部工具栏背景颜色 (以下两个都行)
