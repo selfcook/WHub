@@ -14,5 +14,13 @@ class AlarmVC: BaseVC {
     override func viewDidLoad() {
         view.backgroundColor = .white
         
+        createView()
     }
+    
+    
+    func createView() {
+        
+        
+    }
+    
 }
