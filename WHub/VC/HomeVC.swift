@@ -10,14 +10,22 @@ import Foundation
 
 class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     private var tableView : UITableView?
     
+    private var listArr : Array<Any>?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .white
+    }
+    
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         view.backgroundColor = UIColor.white
         createView()
+        
+        listArr = ["提醒闹钟","稍后阅读"]
         
     }
     
@@ -29,13 +37,13 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         self.view.addSubview(containerView)
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 40))
-        label.text = "Home"
+        label.text = "Mixed"
         label.textAlignment = NSTextAlignment(rawValue: 1)!
         label.font = UIFont.boldSystemFont(ofSize: 20)
         containerView.addSubview(label)
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.red.cgColor]
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.yellow.cgColor]
         //        gradientLayer.locations = [0.0, 1.0]
         gradientLayer.startPoint = CGPoint.init(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint.init(x: 1, y: 0.5)
@@ -52,11 +60,12 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.tableFooterView = UIView.init()
+        tableView?.separatorStyle = .none
     }
     
     //MARK:TableviewDelegate&datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return listArr?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +75,20 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
         }
         
-        cell?.textLabel?.text = "提醒闹钟"
+        var imgName : String!
+        switch indexPath.row {
+        case 0:
+            imgName = "home_alarm"
+        case 1:
+            imgName = "home_readlater"
+        default:
+            break
+        }
+        cell?.imageView?.image = UIImage(named: imgName!)
+        
+        
+        cell?.textLabel?.text = listArr![indexPath.row] as? String
+        cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         
         return cell!
     }
@@ -76,7 +98,7 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(HomeVC(), animated: true)
+            navigationController?.pushViewController(FileViewController(), animated: true)
         default: break
             
         }

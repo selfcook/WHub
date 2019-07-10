@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import AudioToolbox
 
 class BaseTabbarController: UITabBarController {
     
@@ -23,8 +23,8 @@ class BaseTabbarController: UITabBarController {
         let homeVC = HomeVC()
         let homeNav = UINavigationController(rootViewController:homeVC)
 //        fileNav.tabBarItem.title = "文件"
-        homeNav.tabBarItem.image = UIImage(named:"tabbar_files")
-        homeNav.tabBarItem.selectedImage = UIImage(named:"tarbar1_yes")
+        homeNav.tabBarItem.image = UIImage(named:"tabbar_files1")
+        homeNav.tabBarItem.selectedImage = UIImage(named:"tabbar_files")
         homeNav.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0)
         
         let transferVC = TransferFileVC()
@@ -48,5 +48,9 @@ class BaseTabbarController: UITabBarController {
         //tabBar 底部工具栏背景颜色 (以下两个都行)
 //        self.tabBar.barTintColor = UIColor.clear
 //        self.tabBar.backgroundColor = UIColor.white
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        AudioServicesPlaySystemSound(1519)
     }
 }

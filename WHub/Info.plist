@@ -9,8 +9,15 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.text</string>
+				<string>public.image</string>
+				<string>public.data</string>
+				<string>public.html</string>
+			</array>
 			<key>CFBundleTypeName</key>
-			<string></string>
+			<string>url</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
 		</dict>
@@ -42,8 +49,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
