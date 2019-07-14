@@ -14,18 +14,18 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
     private var listArr : Array<Any>?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = .white
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.barTintColor = .white
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         createView()
         
-        listArr = ["提醒闹钟","稍后阅读"]
+        listArr = ["提醒闹钟","稍后阅读","播放器"]
         
     }
     
@@ -81,6 +81,8 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
             imgName = "home_alarm"
         case 1:
             imgName = "home_readlater"
+        case 2:
+            imgName = "home_player"
         default:
             break
         }
@@ -97,7 +99,7 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
-        case 0:
+        case 2:
             navigationController?.pushViewController(FileViewController(), animated: true)
         default: break
             
