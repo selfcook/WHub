@@ -107,6 +107,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4DAD0A2422DB7F7100CEACE6 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				4D41151922CA4449001A334B /* AlarmVC.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		4DAD0A2522DB7F8400CEACE6 /* ReadLater */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReadLater;
+			sourceTree = "<group>";
+		};
+		4DAD0A2622DB7FA200CEACE6 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				4DF7C70421C7E80E00431FDB /* FileViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		4DF7C6F621C7E80E00431FDB = {
 			isa = PBXGroup;
 			children = (
@@ -176,11 +199,12 @@
 		4EF9AD7A228422F000AD96CE /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				4DF7C70421C7E80E00431FDB /* FileViewController.swift */,
+				4DAD0A2422DB7F7100CEACE6 /* Alarm */,
+				4DAD0A2522DB7F8400CEACE6 /* ReadLater */,
+				4DAD0A2622DB7FA200CEACE6 /* Player */,
+				4E45659B22CA0C99004B9F55 /* HomeVC.swift */,
 				4EF9AD742284228300AD96CE /* TransferFileVC.swift */,
 				4EF9AD76228422A800AD96CE /* SettingVC.swift */,
-				4E45659B22CA0C99004B9F55 /* HomeVC.swift */,
-				4D41151922CA4449001A334B /* AlarmVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
