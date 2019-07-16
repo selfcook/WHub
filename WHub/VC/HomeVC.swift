@@ -7,6 +7,7 @@
 //  列表形式不同功能入口
 
 import Foundation
+import StatusAlert
 
 class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,7 +28,7 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    func createView() {
+    private func createView() {
         //导航栏title
         //首先分别创建渐变层和文本标签，然后将渐变层的mask设置为文本标签即可。
         let containerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 40))
@@ -76,7 +77,7 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         cell?.imageView?.image = UIImage(named: imgName as! String)
         
         cell?.textLabel?.text = listArr![indexPath.row] as? String
-        cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: listSize)
         
         return cell!
     }
@@ -87,7 +88,16 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             navigationController?.pushViewController(AlarmVC(), animated: true)
-        case 1: break
+        case 1:
+            // Creating StatusAlert instance
+            let statusAlert = StatusAlert()
+//            statusAlert.image = UIImage(named: "tabbar_files1")
+            statusAlert.title = "StatusAlert title"
+            statusAlert.message = "Message to show beyond title"
+            statusAlert.canBePickedOrDismissed = true
+            
+            // Presenting created instance
+            statusAlert.showInKeyWindow()
         case 2:
             navigationController?.pushViewController(FileViewController(), animated: true)
         default: break

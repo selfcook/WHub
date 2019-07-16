@@ -13,6 +13,8 @@ import Foundation
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
 
+//列表标题字体大小
+let listSize = CGFloat(13)
 
 
 
