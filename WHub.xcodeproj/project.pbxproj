@@ -12,7 +12,6 @@
 		4D41151A22CA4449001A334B /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41151922CA4449001A334B /* AlarmVC.swift */; };
 		4DF7C70321C7E80E00431FDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7C70221C7E80E00431FDB /* AppDelegate.swift */; };
 		4DF7C70521C7E80E00431FDB /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF7C70421C7E80E00431FDB /* FileViewController.swift */; };
-		4DF7C70821C7E80E00431FDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70621C7E80E00431FDB /* Main.storyboard */; };
 		4DF7C70A21C7E80F00431FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70921C7E80F00431FDB /* Assets.xcassets */; };
 		4DF7C70D21C7E80F00431FDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */; };
 		4E45659C22CA0C99004B9F55 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45659B22CA0C99004B9F55 /* HomeVC.swift */; };
@@ -22,6 +21,7 @@
 		4E58CBAA22488823007C31C7 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58CBA922488823007C31C7 /* FileHandle.swift */; };
 		4E7E898721EC5A7400798459 /* MainPageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E898521EC5A7400798459 /* MainPageCollectionCell.swift */; };
 		4E7E898821EC5A7400798459 /* MainPageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E898621EC5A7400798459 /* MainPageCollectionCell.xib */; };
+		4EF428A722DD79DE0049CFD5 /* ReadLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF428A622DD79DE0049CFD5 /* ReadLaterVC.swift */; };
 		4EF9AD732284219600AD96CE /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9AD722284219600AD96CE /* BaseTabbarController.swift */; };
 		4EF9AD752284228300AD96CE /* TransferFileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9AD742284228300AD96CE /* TransferFileVC.swift */; };
 		4EF9AD77228422A800AD96CE /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF9AD76228422A800AD96CE /* SettingVC.swift */; };
@@ -58,7 +58,6 @@
 		4DF7C6FF21C7E80E00431FDB /* WHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF7C70221C7E80E00431FDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF7C70421C7E80E00431FDB /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
-		4DF7C70721C7E80E00431FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DF7C70921C7E80F00431FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DF7C70C21C7E80F00431FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DF7C70E21C7E80F00431FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		4E7E898521EC5A7400798459 /* MainPageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionCell.swift; sourceTree = "<group>"; };
 		4E7E898621EC5A7400798459 /* MainPageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPageCollectionCell.xib; sourceTree = "<group>"; };
 		4E7E898921EC751300798459 /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
+		4EF428A622DD79DE0049CFD5 /* ReadLaterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadLaterVC.swift; path = WHub/VC/ReadLaterVC.swift; sourceTree = SOURCE_ROOT; };
 		4EF9AD722284219600AD96CE /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		4EF9AD742284228300AD96CE /* TransferFileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFileVC.swift; sourceTree = "<group>"; };
 		4EF9AD76228422A800AD96CE /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 		4DAD0A2522DB7F8400CEACE6 /* ReadLater */ = {
 			isa = PBXGroup;
 			children = (
+				4EF428A622DD79DE0049CFD5 /* ReadLaterVC.swift */,
 			);
 			path = ReadLater;
 			sourceTree = "<group>";
@@ -126,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				4DF7C70421C7E80E00431FDB /* FileViewController.swift */,
+				4E7E898521EC5A7400798459 /* MainPageCollectionCell.swift */,
+				4E7E898621EC5A7400798459 /* MainPageCollectionCell.xib */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -157,9 +160,6 @@
 				4EF9AD79228422DA00AD96CE /* FileHandle */,
 				4EF9AD78228422CB00AD96CE /* Base */,
 				4DF7C70221C7E80E00431FDB /* AppDelegate.swift */,
-				4E7E898521EC5A7400798459 /* MainPageCollectionCell.swift */,
-				4E7E898621EC5A7400798459 /* MainPageCollectionCell.xib */,
-				4DF7C70621C7E80E00431FDB /* Main.storyboard */,
 				4DF7C70921C7E80F00431FDB /* Assets.xcassets */,
 				4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */,
 				4DF7C70E21C7E80F00431FDB /* Info.plist */,
@@ -306,7 +306,6 @@
 				4DF7C70D21C7E80F00431FDB /* LaunchScreen.storyboard in Resources */,
 				4E7E898821EC5A7400798459 /* MainPageCollectionCell.xib in Resources */,
 				4DF7C70A21C7E80F00431FDB /* Assets.xcassets in Resources */,
-				4DF7C70821C7E80E00431FDB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +393,7 @@
 				4DF7C70321C7E80E00431FDB /* AppDelegate.swift in Sources */,
 				4EF9AD732284219600AD96CE /* BaseTabbarController.swift in Sources */,
 				4E58CBAA22488823007C31C7 /* FileHandle.swift in Sources */,
+				4EF428A722DD79DE0049CFD5 /* ReadLaterVC.swift in Sources */,
 				4EF9AD752284228300AD96CE /* TransferFileVC.swift in Sources */,
 				4D41151822CA41F7001A334B /* Const.swift in Sources */,
 			);
@@ -418,14 +418,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4DF7C70621C7E80E00431FDB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DF7C70721C7E80E00431FDB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4DF7C70B21C7E80F00431FDB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -565,6 +557,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X89JVHVUUW;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -576,6 +569,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arthur.WHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WHub/Bridging_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -588,6 +582,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X89JVHVUUW;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -599,6 +594,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Arthur.WHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WHub/Bridging_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

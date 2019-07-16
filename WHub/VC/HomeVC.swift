@@ -13,20 +13,17 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     private var tableView : UITableView?
     
     private var listArr : Array<Any>?
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.barTintColor = .white
-//    }
+    private var listImgArr : Array<Any>?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         createView()
         
+        //列表名称及图表
         listArr = ["提醒闹钟","稍后阅读","播放器"]
-        
+        listImgArr = ["home_alarm","home_readlater","home_player"]
     }
     
     
@@ -75,19 +72,8 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
         }
         
-        var imgName : String!
-        switch indexPath.row {
-        case 0:
-            imgName = "home_alarm"
-        case 1:
-            imgName = "home_readlater"
-        case 2:
-            imgName = "home_player"
-        default:
-            break
-        }
-        cell?.imageView?.image = UIImage(named: imgName!)
-        
+        let imgName = listImgArr![indexPath.row]
+        cell?.imageView?.image = UIImage(named: imgName as! String)
         
         cell?.textLabel?.text = listArr![indexPath.row] as? String
         cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -99,6 +85,9 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
+        case 0:
+            navigationController?.pushViewController(AlarmVC(), animated: true)
+        case 1: break
         case 2:
             navigationController?.pushViewController(FileViewController(), animated: true)
         default: break

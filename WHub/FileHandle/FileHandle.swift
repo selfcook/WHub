@@ -9,7 +9,9 @@
 import Foundation
 
 internal func printFM(_ str: String) {
+#if DEBUG
     print("FileHandle: \(str)")
+#endif
 }
 
 
@@ -46,7 +48,7 @@ class FileHandle: NSObject {
 //    }
     
     
-    func getFileArr() -> Array<FileModel>? {
+    public func getFileArr() -> Array<FileModel>? {
         
         var docArr = try? fm.contentsOfDirectory(atPath: path)
         docArr = docArr?.filter{$0 != ".DS_Store"}
