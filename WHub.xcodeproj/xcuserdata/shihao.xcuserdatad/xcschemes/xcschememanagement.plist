@@ -12,12 +12,12 @@
 		<key>WHub.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>3</integer>
 		</dict>
 		<key>shareExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>
