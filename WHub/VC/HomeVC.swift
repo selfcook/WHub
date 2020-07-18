@@ -25,7 +25,13 @@ class HomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         //列表名称及图表
         listArr = ["提醒闹钟","稍后阅读","播放器"]
         listImgArr = ["home_alarm","home_readlater","home_player"]
+        
+        
+        
+        
     }
+    
+    
     
     
     private func createView() {

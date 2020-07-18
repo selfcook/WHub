@@ -20,6 +20,7 @@ class MainPageCollectionCell: UICollectionViewCell {
         textLabel.font = UIFont.systemFont(ofSize: 12)
         sizeLabel.textColor = UIColor.black
         sizeLabel.font = UIFont.systemFont(ofSize: 10)
+        
     }
 
     
