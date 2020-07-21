@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         //branch_test
         //master
+        //vscode_test
         return true
     }
 
